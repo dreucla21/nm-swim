@@ -13,6 +13,22 @@ tbody tr:nth-child(even) {
   background-color: #fff;
 }
 
+
+
+.tabulator-header {
+  font-family: Arial, sans-serif;
+  font-size:14;
+  headerBackgroundColor: #BB0000;
+  color: white;
+  text-align: left;
+}
+
+.tabulator-row  {
+  font-family: Arial, sans-serif;
+  font-size:13;
+  text-align: left;
+}
+
 h1 {
     text-align: left;
     font-weight: normal;
