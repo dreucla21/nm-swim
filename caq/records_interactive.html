@@ -608,12 +608,11 @@
             resizableRows:false,
             pagination:"local",
             selectableRange:1, //allow only one range at a time
-            selectableRangeColumns:true,
-            selectableRangeRows:true,
+            selectableRangeColumns:false,
+            selectableRangeRows:false,
             clipboard:true,
             clipboardCopyRowRange:"range",
             columnDefaults:{resizable:false},
-            rowHeader:{headerSort:false, hozAlign:"center", resizable:false, frozen:true},
             paginationSize:25,
             paginationSizeSelector:[10, 25, 50, 100],
              paginationCounter:"rows",
@@ -652,7 +651,7 @@
               return all_values_list.indexOf(a) - all_values_list.indexOf(b);; //you must return the difference between the two values
             }
         },
-        
+
         {title:"SwimTime", field:"SwimTime", width:105, headerSort:false},
         {title:"SwimDate", field:"SwimDate", width:105, sorter:"date", headerFilter: "input", sorterParams:{ format:"MM/dd/yyyy"}},
         {title:"Name", field:"Name", width:400, headerFilter:"input", resizable:false},
