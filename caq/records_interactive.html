@@ -603,19 +603,17 @@
 {'Course': 'LCM', 'Gender': 'Female', 'AgeGroup': 'Open', 'Event': '400 MED-R LCM', 'SwimTime': '4:32.45', 'Name': 'Emma Kelley, Raylee Hunt, Maya Van Atta, Annabella Marthaler', 'Age': 0, 'LSC': 'NM', 'Team': 'Charger Aquatics', 'SwimDate': '07/29/2022', 'Meet': '2022 SN Finals - Western Zone Senior Ch', 'TimeStandard': '2023 Futures (LCM)', 'TeamCode': 'CAQ'},
 ];
     var table = new Tabulator("#example-table", {
-            data: tableData,
+           data: tableData,
             layout:"fitDataTable",
             resizableRows:false,
             pagination:"local",
             selectableRange:1, //allow only one range at a time
             selectableRangeColumns:true,
             selectableRangeRows:true,
-            selectableRangeClearCells:true,
             clipboard:true,
             clipboardCopyRowRange:"range",
-            clipboardPasteParser:"range",
-            clipboardPasteAction:"range",
             columnDefaults:{resizable:false},
+            rowHeader:{headerSort:false, hozAlign:"center", resizable:false, frozen:true},
             paginationSize:25,
             paginationSizeSelector:[10, 25, 50, 100],
              paginationCounter:"rows",

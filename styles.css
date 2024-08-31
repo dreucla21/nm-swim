@@ -17,10 +17,12 @@ tbody tr:nth-child(even) {
 
 .tabulator-header {
   font-family: Arial, sans-serif;
-  font-size:14;
-  headerBackgroundColor: #BB0000;
-  color: white;
-  text-align: left;
+  font-size:13;
+}
+
+.tabulator .tabulator-header .tabulator-col .tabulator-header-filter input,
+.tabulator .tabulator-header .tabulator-col .tabulator-header-filter select {
+  font-size:13;
 }
 
 .tabulator-row  {
