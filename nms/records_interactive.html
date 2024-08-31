@@ -632,18 +632,27 @@
 {'Course': 'LCM', 'Gender': 'Female', 'AgeGroup': 'Open', 'Event': '400 MED-R LCM', 'SwimTime': '4:27.19', 'Name': 'Mariah Maile, Olivia Heflin, Sara Vianco, Gillian St. John', 'Age': 0, 'LSC': 'NM', 'Team': 'Lobo Aquatic Club', 'SwimDate': '07/18/2015', 'Meet': '2015 OR Speedo Western Section LC', 'TimeStandard': '"Slower than B"', 'TeamCode': 'LOBO'},
 ];
     var table = new Tabulator("#example-table", {
+            data: tableData,
             layout:"fitDataTable",
             resizableRows:false,
             pagination:"local",
+            selectableRange:1, //allow only one range at a time
+            selectableRangeColumns:true,
+            selectableRangeRows:true,
+            selectableRangeClearCells:true,
+            clipboard:true,
+            clipboardCopyRowRange:"range",
+            clipboardPasteParser:"range",
+            clipboardPasteAction:"range",
             columnDefaults:{resizable:false},
             paginationSize:25,
             paginationSizeSelector:[10, 25, 50, 100],
              paginationCounter:"rows",
              initialSort:[ {column:"SwimDate", dir:"desc"}],
             columns:[
-        {title:"Course", field:"Course", width:85, editor:"list", headerFilter:true, headerFilterParams:{valuesLookup:true, clearable:true}},
-        {title:"Gender", field:"Gender", width:85, editor:"list", headerFilter:true, headerFilterParams:{valuesLookup:true, clearable:true}},
-        {title:"AgeGroup", field:"AgeGroup", width:105, editor:"list", headerFilter:true, headerFilterParams:{valuesLookup:true, clearable:true},
+        {title:"Course", field:"Course", width:85, headerFilter:"list",headerFilterParams:{valuesLookup:true, clearable:true}},
+        {title:"Gender", field:"Gender", width:85, headerFilter:"list", headerFilterParams:{valuesLookup:true, clearable:true}},
+        {title:"AgeGroup", field:"AgeGroup", width:105, headerFilter:"list", headerFilterParams:{valuesLookup:true, clearable:true},
         sorter:function(a, b, aRow, bRow, column, dir, sorterParams){
           all_values = {
             "8U": 1, "10U":2, "11-12": 3,"13-14": 4,"15-16": 5,"17-18": 6,"Open": 7 }
@@ -655,7 +664,7 @@
           return all_values[a] - all_values[b]; //you must return the difference between the two values
       },
   },
-                {title:"Event", field:"Event", width:140, editor:"list", headerFilter:true, headerFilterParams:{valuesLookup:true, clearable:true, sort: 'asc'},
+        {title:"Event", field:"Event", width:140, headerFilter:"list", headerFilterParams:{valuesLookup:true, clearable:true, sort: 'asc'},
           sorter:function(a, b, aRow, bRow, column, dir, sorterParams)
           {
             all_values_list = ["50 FR SCY", "100 FR SCY", "200 FR SCY", "500 FR SCY","1000 FR SCY","1650 FR SCY", "50 BK SCY", "100 BK SCY", "200 BK SCY",
@@ -675,21 +684,16 @@
             }
         },
         
-            {title:"Team", field:"TeamCode", width: 105, editor:"list",headerFilter:true, headerSort:true, headerFilterParams:{valuesLookup:true, clearable:true, sort: 'asc'}},
+            {title:"Team", field:"TeamCode", width: 105, headerFilter:"list", headerSort:true, headerFilterParams:{valuesLookup:true, clearable:true, sort: 'asc'}},
             
-        {title:"SwimTime", field:"SwimTime", width:105, editor:"list", headerSort:false},
-        {title:"SwimDate", field:"SwimDate", width:105, editor:"list", sorter:"date", headerFilter: false, sorterParams:{ format:"MM/dd/yyyy"}},
-        {title:"Name", field:"Name", width:400, editor:"input", headerFilter:true, resizable:false},
-        {title:"Meet", field:"Meet", width:400, editor:"input", headerFilter:true, resizable:false},
+        {title:"SwimTime", field:"SwimTime", width:105, headerSort:false},
+        {title:"SwimDate", field:"SwimDate", width:105, sorter:"date", headerFilter: "input", sorterParams:{ format:"MM/dd/yyyy"}},
+        {title:"Name", field:"Name", width:400, headerFilter:"input", resizable:false},
+        {title:"Meet", field:"Meet", width:400, headerFilter:"input", resizable:false},
+
     ],
 });
 
 
-
-    table.on("tableBuilt", () => {
-      table.setData(tableData);
-    });
-
-
 </script>
-<body><br>Last updated on 2024-08-25</body></html>
+<body><br>Last updated on 2024-08-31</body></html>
