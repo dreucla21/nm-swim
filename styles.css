@@ -186,6 +186,43 @@ body {
     min-width: 75px;
 }
 
+.td2_date {
+    text-align: center;
+    font-size:14;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    font-family: Arial, sans-serif;
+    white-space: nowrap;
+    min-width: 95px;
+}
+
+.td2_time {
+    text-align: center;
+    font-size:14;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    font-family: Arial, sans-serif;
+    white-space: nowrap;
+    min-width: 60px;
+}
+
+.td2_rank {
+    text-align: center;
+    font-size:14;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    font-family: Arial, sans-serif;
+    white-space: nowrap;
+    min-width: 25px;
+        font-weight: bold;
+}
+
 
 .td3_nm {
     text-align: center;
